@@ -1,4 +1,4 @@
-MEMENUHI TUGAS UJIAN TENGAH SEMESTER PEMROGRAMAN WEB LANJUT
+PROJECT UAS PEMROGRAMAN WEB LANJUT
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
