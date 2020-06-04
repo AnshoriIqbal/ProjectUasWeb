@@ -13,7 +13,7 @@
 </section>
 <div class="content">
     <div class="panel panel-flat border-top-lg border-top-primary">
-    <form action="{{(isset($supplier))?route('apotek.update',$supplier->Id_Supplier):route('apotek.store')}}" method="POST">
+    <form action="{{(isset($supplier))?route('supplier.update',$supplier->id_supplier):route('supplier.store')}}" method="POST">
         @csrf
         @if(isset($supplier))?@method('PUT')@endif
         <div class="panel-body">

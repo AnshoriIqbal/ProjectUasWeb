@@ -13,15 +13,15 @@
 </section>
 <div class="content">
     <div class="panel panel-flat border-top-lg border-top-primary">
-    <form action="{{(isset($DetailSupply))?route('detailsupply.update',$etailSupply->Id_detailsupply):route('DetailSupply.store')}}" method="POST">
+    <form action="{{(isset($DetailSupply))?route('detailsupply.update',$etailSupply->id_detailsupply):route('DetailSupply.store')}}" method="POST">
         @csrf
         @if(isset($DetailSupply))?@method('PUT')@endif
         <div class="panel-body">
             <div class="form-group">
                 <label class="control-label col-lg-2">ID Supply</label>
                 <div class="col-lg-10">
-                    <input type="text" value="{{(isset($DetailSupply))?$DetailSupply->Id_Suppy:old('Id_Supply')}}" name="Id_Supply" class="form-control">
-                    @error('Id_Supply')<small style="color:red">{{$message}}</small>@enderror
+                    <input type="text" value="{{(isset($DetailSupply))?$DetailSupply->id_Suppy:old('id_Supply')}}" name="id_Supply" class="form-control">
+                    @error('id_Supply')<small style="color:red">{{$message}}</small>@enderror
                 </div>
                 <label class="control-label col-lg-2">ID Obat</label>
                 <div class="col-lg-10">
@@ -30,8 +30,8 @@
                 </div>
                 <label class="control-label col-lg-2">ID Detail Penjualan</label>
                 <div class="col-lg-10">
-                    <input type="text" value="{{(isset($DetailSupply))?$V->harga:old('Id_detailpenjualan')}}" name="Id_detailpenjualan" class="form-control">
-                    @error('Id_detailpenjualan')<small style="color:red">{{$message}}</small>@enderror
+                    <input type="text" value="{{(isset($DetailSupply))?$V->harga:old('id_detailpenjualan')}}" name="id_detailpenjualan" class="form-control">
+                    @error('id_detailpenjualan')<small style="color:red">{{$message}}</small>@enderror
                 </div>
                 
             </div>

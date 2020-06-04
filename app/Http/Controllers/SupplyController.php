@@ -56,11 +56,11 @@ class SupplyController extends Controller
         $validasi = $request->validate([ 
             'quantity'=>'required',
             'hargatotal'=>'required',
-            'tanggalOrder'=>'required',
-            'tanggalPenerimaan'=>'required',
-            'tanggalBayar'=>'required',
-            'Id_Karyawan'=>'required',
-            'Id_Supplier'=>'required',
+            'tanggalOrder'=>'date',
+            'tanggalPenerimaan'=>'date',
+            'tanggalBayar'=>'date',
+            'id_karyawan'=>'required',
+            'id_supplier'=>'required',
             'id_obat'=>'required',
             
             
@@ -91,7 +91,7 @@ class SupplyController extends Controller
     {
         $title='Input supply';
         $Supply=Supply::find($id);
-        return view('admin.inputsupply',compact('title','supply'));
+        return view('admin.inputsupply',compact('title','Supply'));
     }
 
     /**
@@ -111,16 +111,16 @@ class SupplyController extends Controller
         $validasi = $request->validate([ 
             'quantity'=>'required',
             'hargatotal'=>'required',
-            'tanggalOrder'=>'required',
-            'tanggalPenerimaan'=>'required',
-            'tanggalBayar'=>'required',
-            'Id_Karyawan'=>'required',
-            'Id_Supplier'=>'required',
+            'tanggalOrder'=>'date',
+            'tanggalPenerimaan'=>'date',
+            'tanggalBayar'=>'date',
+            'id_karyawan'=>'required',
+            'id_supplier'=>'required',
             'id_obat'=>'required',
             
         ],$messages);
 
-        Supply::whereId_Supply($id)->update($validasi);
+        Supply::whereid_supply($id)->update($validasi);
         return redirect('supply')->with('succes','data berhasil di update');
     }
 
@@ -132,7 +132,7 @@ class SupplyController extends Controller
      */
     public function destroy($id)
     {
-        Supply::whereId_Supply($id)->delete();
+        Supply::whereid_supply($id)->delete();
         return redirect('supply')->with('succes','data berhasil di update'); 
     }
 }

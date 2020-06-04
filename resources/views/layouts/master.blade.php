@@ -187,11 +187,11 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">DAFTAR MENU</li>
-        <li class="treeview">
-          <a href="#">
+        <li>
+          <a href="{{route('karyawan.index')}}">
             <i class="fa fa-user"></i> <span>Karyawan</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
+             
             </span>
           </a>
           <ul class="treeview-menu">
@@ -199,35 +199,28 @@
             <li><a href="/adminlte/index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
           </ul>
         </li>
-        <li class="treeview">
-          <a href="#">
+        <li>
+          <a href="{{route('pelanggan.index')}}">
             <i class="fa fa-user"></i>
             <span>Pelanggan</span>
             <span class="pull-right-container">
-              <span class="label label-primary pull-right">4</span>
+              
             </span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-            <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-            <li><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-            <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-          </ul>
         </li>
         <li>
-          <a href="../widgets.html">
-            <i class="fa fa-th"></i> <span>Return</span>
+          <a href="{{route('pengembalian.index')}}">
+            <i class="fa fa-th"></i>
+            <span>Return</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green">Hot</small>
             </span>
           </a>
         </li>
-        <li class="treeview">
-          <a href="#">
+        <li>
+          <a href="{{route('obat.index')}}">
             <i class="fa fa-pie-chart"></i>
             <span>Obat</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
@@ -237,21 +230,16 @@
             <li><a href="../charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
           </ul>
         </li>
-        <li class="treeview">
-          <a href="#">
+        <li>
+          <a href="{{route('penjualan.index')}}">
             <i class="fa fa-laptop"></i>
             <span>Penjualan</span>
             <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
+              
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-            <li><a href="../UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-            <li><a href="../UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-            <li><a href="../UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-            <li><a href="../UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-            <li><a href="../UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+           
           </ul>
         </li>
         <li class="treeview">
@@ -262,20 +250,20 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-            <li><a href="../forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-            <li><a href="../forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+            <li class="active"><a href="{{route('detailpenjualan.index')}}"><i class="fa fa-circle-o"></i> Data Detai Supply</a></li>
           </ul>
+
         </li>
-        
-          <a href="{{route('supplier.index')}}">
-            <i class="fa fa-calendar"></i> <span>Supplier</span>
+        <li>
+            <a href="{{route('supplier.index')}}">
+            <i class="fa fa-calendar"></i>
+            <span>Supplier</span>
             <span class="pull-right-container">
-             </span>
+            </span>
           </a>
         </li>
         <li>
-        
+       
           <a href="{{route('supply.index')}}">
             <i class="fa fa-calendar"></i> <span>Supply</span>
             <span class="pull-right-container">

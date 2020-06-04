@@ -13,15 +13,15 @@
 </section>
 <div class="content">
     <div class="panel panel-flat border-top-lg border-top-primary">
-    <form action="{{(isset($Supply))?route('supply.update',$Supply->Id_Supply):route('supply.store')}}" method="POST">
+    <form action="{{(isset($Supply))?route('supply.update',$Supply->id_supply):route('supply.store')}}" method="POST">
         @csrf
         @if(isset($Supply))?@method('PUT')@endif
         <div class="panel-body">
             <div class="form-group">
                 <label class="control-label col-lg-2">ID Supplier</label>
                 <div class="col-lg-10">
-                    <input type="text" value="{{(isset($Supply))?$Supply->Id_Supplier:old('Id_Supplier')}}" name="Id_Supplier" class="form-control">
-                    @error('Id_Supplier')<small style="color:red">{{$message}}</small>@enderror
+                    <input type="text" value="{{(isset($Supply))?$Supply->id_supplier:old('id_supplier')}}" name="id_supplier" class="form-control">
+                    @error('id_supplier')<small style="color:red">{{$message}}</small>@enderror
                 </div>
                 <label class="control-label col-lg-2">ID Obat</label>
                 <div class="col-lg-10">
@@ -40,7 +40,7 @@
                 </div>
                 <label class="control-label col-lg-2">Tanggal Penerimaan</label>
                 <div class="col-lg-10">
-                    <input type="text" value="{{(isset($Supply))?$Supply->tanggalPenerimaan:old('id_obat')}}" name="id_obat" class="form-control">
+                    <input type="text" value="{{(isset($Supply))?$Supply->tanggalPenerimaan:old('tanggalPenerimaan')}}" name="tanggalPenerimaan" class="form-control">
                     @error('tanggalPenerimaan')<small style="color:red">{{$message}}</small>@enderror
                 </div>
                 <label class="control-label col-lg-2">Tanggal Pembayaran</label>
@@ -55,8 +55,8 @@
                 </div>
                 <label class="control-label col-lg-2">ID Karyawan</label>
                 <div class="col-lg-10">
-                    <input type="text" value="{{(isset($Supply))?$Supply->Id_Karyawan:old('Id_Karyawan')}}" name="Id_Karyawan" class="form-control">
-                    @error('Id_Karyawan')<small style="color:red">{{$message}}</small>@enderror
+                    <input type="text" value="{{(isset($Supply))?$Supply->id_karyawan:old('id_karyawan')}}" name="id_karyawan" class="form-control">
+                    @error('id_karyawan')<small style="color:red">{{$message}}</small>@enderror
                 </div>
                 
             </div>

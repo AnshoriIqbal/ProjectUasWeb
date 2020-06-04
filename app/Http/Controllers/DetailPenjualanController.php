@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\DetailSupply;
+use App\DetailPenjualan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 
 
-class DetailSupplyController extends Controller
+class DetailPenjualanController extends Controller
 {
     public function __construct()
     {
@@ -24,9 +24,9 @@ class DetailSupplyController extends Controller
      */
     public function index()
     {
-        $title='detailsupply';
-        $DetailSupply=DetailSupply::paginate(3);
-        return view('admin.detailsupply',compact('title','DetailSupply'));
+        $title='detailpenjualan';
+        $DetailPenjualan=DetailPenjualan::paginate(3);
+        return view('admin.detailpenjualan',compact('title','DetailPenjualan'));
     }
 
     /**
@@ -36,8 +36,8 @@ class DetailSupplyController extends Controller
      */
     public function create()
     {
-        $title='Input detailsupply';
-        return view('admin.inputdetailsupply',compact('title'));
+        $title='Input detailpenjualan';
+        return view('admin.inputdetailpenjualan',compact('title'));
     }
 
     /**
@@ -54,14 +54,15 @@ class DetailSupplyController extends Controller
             'numeric' =>'Kolom :attribute harus Angka',
         ];
         $validasi = $request->validate([ 
-            'id_supply'=>'required',
-            'id_obat'=>'required',
-            'id_detailpenjualan'=>'numeric',
+            'id_obat'=>'numeric',
+            'id_penjualan'=>'numeric',
+            'harga'=>'numeric',
+            'diskon'=>'numeric',
             
         ],$messages);
 
-        DetailSupply::create($validasi);
-        return redirect('detailsupply')->with('succes','data berhasil di update');
+        DetailPenjualan::create($validasi);
+        return redirect('detailpenjualan')->with('succes','data berhasil di update');
     }
 
     /**
@@ -83,9 +84,9 @@ class DetailSupplyController extends Controller
      */
     public function edit($id)
     {
-        $title='Input detailsupply';
-        $DetailSupply=DetailSupply::find($id);
-        return view('admin.detailsupply',compact('title','detailsupply'));
+        $title='Input detailpenjualan';
+        $DetailPenjualan=DetailPenjualan::find($id);
+        return view('admin.detailpenjualan',compact('title','detailpenjualan'));
     }
 
     /**
@@ -103,14 +104,15 @@ class DetailSupplyController extends Controller
             'numeric' =>'Kolom :attribute harus Angka',
         ];
         $validasi = $request->validate([ 
-            'id_supply'=>'required',
-            'id_obat'=>'required',
-            'id_detailpenjualan'=>'numeric',
+            'id_obat'=>'numeric',
+            'id_penjualan'=>'numeric',
+            'harga'=>'numeric',
+            'diskon'=>'numeric',
             
         ],$messages);
 
-        DetailSupply::whereid_detailsupply($id)->update($validasi);
-        return redirect('detailsupply')->with('succes','data berhasil di update');
+        DetailPenjualan::whereid_detailpenjualan($id)->update($validasi);
+        return redirect('detailpenjualan')->with('succes','data berhasil di update');
     }
 
     /**
@@ -121,7 +123,7 @@ class DetailSupplyController extends Controller
      */
     public function destroy($id)
     {
-        DetailSupply::whereid_detailsupply($id)->delete();
-        return redirect('detailsupply')->with('succes','data berhasil di update'); 
+        DetailPenjualan::whereid_detailpenjualan($id)->delete();
+        return redirect('detailpenjualan')->with('succes','data berhasil di update'); 
     }
 }

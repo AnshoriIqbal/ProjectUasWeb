@@ -5,8 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
+                
                 <div class="card-body">
                     <p align="center"><img src="/adminlte/img/login1.jpg"></p>
                     <form method="POST" action="{{ route('login') }}">

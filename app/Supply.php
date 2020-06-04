@@ -8,7 +8,7 @@ class Supply extends Model
 {
     //
     protected $table='supply';
-    protected $primaryKey='Id_Supply';
-    protected $fillable=['quantity','hargatotal','tanggalOrder','tanggalPenerimaan','tanggalBayar','Id_Karyawan','Id_Supplier','id_obat'];
+    protected $primaryKey='id_supply';
+    protected $fillable=['quantity','hargatotal','tanggalOrder','tanggalPenerimaan','tanggalBayar','id_karyawan','id_supplier','id_obat'];
 }
 

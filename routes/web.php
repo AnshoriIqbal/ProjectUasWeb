@@ -16,11 +16,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('apotek','SupplierController');
+Route::resource('supplier','SupplierController');
 
 Route::resource('detailsupply','DetailSupplyController');
 
 Route::resource('supply','SupplyController');
+
+Route::resource('obat','ObatController');
+
+Route::resource('karyawan','KaryawanController');
+
+Route::resource('pelanggan','PelangganController');
+
+Route::resource('penjualan','PenjualanController');
+
+Route::resource('pengembalian','PengembalianController');
+
+Route::resource('detailpenjualan','DetailPenjualanController');
 
 Auth::routes();
 

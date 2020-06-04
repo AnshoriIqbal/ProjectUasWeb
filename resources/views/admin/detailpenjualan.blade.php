@@ -3,7 +3,7 @@
 @section('content')
 <section class="content-header">
       <h1>
-        Data Supplier
+        Data Detail Penjualan
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -16,17 +16,17 @@
         <div class="panel-body">
             
             <div class="col-lg-12">
-            <a href="{{route('supplier.create')}}">Tambah Data</a>
+            <a href="{{route('detailpenjualan.create')}}">Tambah Data</a>
                 <table class="table table-bordered">
                     <thead>
-                        <tr><th>No</th><th>Nama Supplier</th><th>Alamat</th><th>No Telp</th><th>Aksi</th></tr>
+                        <tr><th>No</th><th>ID Obat</th><th>ID Penjualan</th><th>Harga</th><th>Diskon</th><th>Aksi</th></tr>
                     </thead>
                     <tbody>
-                        @foreach ($supplier as $in=>$val)
-                        <tr><td>{{($in+1)}}</td><td>{{$val->namaSupplier}}</td><td>{{$val->alamat}}</td><td>{{$val->noTelp}}</td>
+                        @foreach ($DetailPenjualan as $in=>$val)
+                        <tr><td>{{($in+1)}}</td><td>{{$val->id_obat}}</td><td>{{$val->id_penjualan}}</td><td>{{$val->harga}}</td><td>{{$val->diskon}}</td>
                         <td>
-                        <a href="{{route('supplier.edit',$val->id_supplier)}}"><button type="submit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
-                        <form action="{{route('supplier.destroy', $val->id_supplier)}}" method="POST">
+                        <a href="{{route('detailpenjualan.edit',$val->id_detailpenjualan)}}"><button type="submit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                        <form action="{{route('detailpenjualan.destroy', $val->id_detailpenjualan)}}" method="POST">
                             @csrf
                             @method('DELETE')
                         <button type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
@@ -35,7 +35,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                {{$supplier->links()}}
+                {{$DetailPenjualan->links()}}
             </div>
         </div>
     </div>

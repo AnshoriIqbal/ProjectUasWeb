@@ -61,7 +61,7 @@ class SupplierController extends Controller
         ],$messages);
 
         Supplier::create($validasi);
-        return redirect('apotek')->with('succes','data berhasil di update');
+        return redirect('supplier')->with('succes','data berhasil di update');
     }
 
     /**
@@ -109,7 +109,7 @@ class SupplierController extends Controller
             
         ],$messages);
 
-        Supplier::whereId_Supplier($id)->update($validasi);
+        Supplier::whereid_supplier($id)->update($validasi);
         return redirect('apotek')->with('succes','data berhasil di update');
     }
 
@@ -121,7 +121,7 @@ class SupplierController extends Controller
      */
     public function destroy($id)
     {
-        Supplier::whereId_Supplier($id)->delete();
+        Supplier::whereid_supplier($id)->delete();
         return redirect('apotek')->with('succes','data berhasil di update'); 
     }
 }

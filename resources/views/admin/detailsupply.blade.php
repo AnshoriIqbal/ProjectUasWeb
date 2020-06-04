@@ -19,17 +19,17 @@
             <a href="{{route('detailsupply.create')}}">Tambah Data</a>
                 <table class="table table-bordered">
                     <thead>
-                        <tr><th>#</th><th>ID Supply</th><th>ID Obat</th><th>ID Detail Penjualan</th><th>Aksi</th></tr>
+                        <tr><th>No</th><th>ID Supply</th><th>ID Obat</th><th>ID Detail Penjualan</th><th>Aksi</th></tr>
                     </thead>
                     <tbody>
                         @foreach ($DetailSupply as $in=>$val)
-                        <tr><td>{{($in+1)}}</td><td>{{$val->Id_Supply}}</td><td>{{$val->id_obat}}</td><td>{{$val->Id_detailpenjualan}}</td>
+                        <tr><td>{{($in+1)}}</td><td>{{$val->id_supply}}</td><td>{{$val->id_obat}}</td><td>{{$val->id_detailpenjualan}}</td>
                         <td>
-                        <a href="{{route('detailsupply.edit',$val->Id_detailsupply)}}">update</a>
-                        <form action="{{route('detailsupply.destroy', $val->Id_detailsupply)}}" method="POST">
+                        <a href="{{route('detailsupply.edit',$val->id_detailsupply)}}"><button type="submit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a>
+                        <form action="{{route('detailsupply.destroy', $val->id_detailsupply)}}" method="POST">
                             @csrf
                             @method('DELETE')
-                        <button type="submit">delete</button>
+                        <button type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
                         </form>
                         </td></tr>
                         @endforeach
